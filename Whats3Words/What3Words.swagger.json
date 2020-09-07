@@ -1,0 +1,239 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "What3Words",
+    "description": "",
+    "version": "1.0"
+  },
+  "host": "api.what3words.com",
+  "basePath": "/v3/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/convert-to-3wa": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "description": "country"
+                },
+                "square": {
+                  "type": "object",
+                  "properties": {
+                    "southwest": {
+                      "type": "object",
+                      "properties": {
+                        "lng": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "square-lng",
+                          "description": "square-lng"
+                        },
+                        "lat": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "square-lat",
+                          "description": "square-lat"
+                        }
+                      },
+                      "description": "southwest"
+                    },
+                    "northeast": {
+                      "type": "object",
+                      "properties": {
+                        "lng": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "ne-lng",
+                          "description": "ne-lng"
+                        },
+                        "lat": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "ne-lng",
+                          "description": "ne-lng"
+                        }
+                      },
+                      "description": "northeast"
+                    }
+                  },
+                  "description": "square"
+                },
+                "nearestPlace": {
+                  "type": "string",
+                  "description": "nearestPlace"
+                },
+                "coordinates": {
+                  "type": "object",
+                  "properties": {
+                    "lng": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "lng"
+                    },
+                    "lat": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "lat"
+                    }
+                  },
+                  "description": "coordinates"
+                },
+                "words": {
+                  "type": "string",
+                  "description": "words"
+                },
+                "language": {
+                  "type": "string",
+                  "description": "language"
+                },
+                "map": {
+                  "type": "string",
+                  "description": "map"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Convert to W3A",
+        "description": "Convert to W3A",
+        "operationId": "ConvertToW3A",
+        "parameters": [
+          {
+            "name": "coordinates",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/convert-to-coordinates": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "description": "country"
+                },
+                "square": {
+                  "type": "object",
+                  "properties": {
+                    "southwest": {
+                      "type": "object",
+                      "properties": {
+                        "lng": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "square-lng",
+                          "description": "square-lng"
+                        },
+                        "lat": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "square-lat",
+                          "description": "square-lat"
+                        }
+                      },
+                      "description": "southwest"
+                    },
+                    "northeast": {
+                      "type": "object",
+                      "properties": {
+                        "lng": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "ne-lng",
+                          "description": "ne-lng"
+                        },
+                        "lat": {
+                          "type": "number",
+                          "format": "float",
+                          "title": "ne-lat",
+                          "description": "ne-lat"
+                        }
+                      },
+                      "description": "northeast"
+                    }
+                  },
+                  "description": "square"
+                },
+                "nearestPlace": {
+                  "type": "string",
+                  "description": "nearestPlace"
+                },
+                "coordinates": {
+                  "type": "object",
+                  "properties": {
+                    "lng": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "lng"
+                    },
+                    "lat": {
+                      "type": "number",
+                      "format": "float",
+                      "description": "lat"
+                    }
+                  },
+                  "description": "coordinates"
+                },
+                "words": {
+                  "type": "string",
+                  "description": "words"
+                },
+                "language": {
+                  "type": "string",
+                  "description": "language"
+                },
+                "map": {
+                  "type": "string",
+                  "description": "map"
+                }
+              }
+            }
+          }
+        },
+        "summary": "ConvertToLatLng",
+        "description": "Convert what 3 words to lat long",
+        "operationId": "ConvertToLatLng",
+        "parameters": [
+          {
+            "name": "words",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API Key": {
+      "type": "apiKey",
+      "in": "query",
+      "name": "key"
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "tags": []
+}
