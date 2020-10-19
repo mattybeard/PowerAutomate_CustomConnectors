@@ -1,0 +1,216 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "OMDB",
+    "description": "The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users."
+  },
+  "host": "www.omdbapi.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Search or Retrieve",
+        "description": "Either search for a value or simple retrieve one",
+        "operationId": "SearchOrRetrieve",
+        "parameters": [
+          {
+            "name": "s",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The value you would like to search for",
+            "x-ms-summary": "Search Term"
+          },
+          {
+            "name": "i",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "The ID of the specific IMDb movie.",
+            "x-ms-summary": "IMDb ID"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Search": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Title": {
+                        "type": "string",
+                        "description": "Title"
+                      },
+                      "Year": {
+                        "type": "string",
+                        "description": "Year"
+                      },
+                      "imdbID": {
+                        "type": "string",
+                        "description": "imdbID"
+                      },
+                      "Type": {
+                        "type": "string",
+                        "description": "Type"
+                      },
+                      "Poster": {
+                        "type": "string",
+                        "description": "Poster"
+                      }
+                    }
+                  },
+                  "description": "Search"
+                },
+                "totalResults": {
+                  "type": "string",
+                  "description": "totalResults"
+                },
+                "Response": {
+                  "type": "string",
+                  "description": "Response"
+                },
+                "Title": {
+                  "type": "string",
+                  "description": "Title"
+                },
+                "Year": {
+                  "type": "string",
+                  "description": "Year"
+                },
+                "Rated": {
+                  "type": "string",
+                  "description": "Rated"
+                },
+                "Released": {
+                  "type": "string",
+                  "description": "Released"
+                },
+                "Runtime": {
+                  "type": "string",
+                  "description": "Runtime"
+                },
+                "Genre": {
+                  "type": "string",
+                  "description": "Genre"
+                },
+                "Director": {
+                  "type": "string",
+                  "description": "Director"
+                },
+                "Writer": {
+                  "type": "string",
+                  "description": "Writer"
+                },
+                "Actors": {
+                  "type": "string",
+                  "description": "Actors"
+                },
+                "Plot": {
+                  "type": "string",
+                  "description": "Plot"
+                },
+                "Language": {
+                  "type": "string",
+                  "description": "Language"
+                },
+                "Country": {
+                  "type": "string",
+                  "description": "Country"
+                },
+                "Awards": {
+                  "type": "string",
+                  "description": "Awards"
+                },
+                "Poster": {
+                  "type": "string",
+                  "description": "Poster"
+                },
+                "Ratings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Source": {
+                        "type": "string",
+                        "description": "Source"
+                      },
+                      "Value": {
+                        "type": "string",
+                        "description": "Value"
+                      }
+                    }
+                  },
+                  "description": "Ratings"
+                },
+                "Metascore": {
+                  "type": "string",
+                  "description": "Metascore"
+                },
+                "imdbRating": {
+                  "type": "string",
+                  "description": "imdbRating"
+                },
+                "imdbVotes": {
+                  "type": "string",
+                  "description": "imdbVotes"
+                },
+                "imdbID": {
+                  "type": "string",
+                  "description": "imdbID"
+                },
+                "Type": {
+                  "type": "string",
+                  "description": "Type"
+                },
+                "DVD": {
+                  "type": "string",
+                  "description": "DVD"
+                },
+                "BoxOffice": {
+                  "type": "string",
+                  "description": "BoxOffice"
+                },
+                "Production": {
+                  "type": "string",
+                  "description": "Production"
+                },
+                "Website": {
+                  "type": "string",
+                  "description": "Website"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "API Key": {
+      "type": "apiKey",
+      "in": "query",
+      "name": "apikey"
+    }
+  },
+  "security": [
+    {
+      "API Key": []
+    }
+  ],
+  "tags": []
+}
