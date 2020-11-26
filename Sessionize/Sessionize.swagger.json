@@ -1,0 +1,501 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Sessionize",
+    "description": "Sessionize custom connector to handle syncing between Sessionize and other areas",
+    "version": "1.0"
+  },
+  "host": "sessionize.com",
+  "basePath": "/api/v2/{SESSIONIZE_ID}/view/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/All": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "title"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      },
+                      "startsAt": {
+                        "type": "string",
+                        "description": "startsAt"
+                      },
+                      "endsAt": {
+                        "type": "string",
+                        "description": "endsAt"
+                      },
+                      "isServiceSession": {
+                        "type": "boolean",
+                        "description": "isServiceSession"
+                      },
+                      "isPlenumSession": {
+                        "type": "boolean",
+                        "description": "isPlenumSession"
+                      },
+                      "speakers": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "speakers"
+                      },
+                      "categoryItems": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "categoryItems"
+                      },
+                      "questionAnswers": {
+                        "type": "array",
+                        "items": {},
+                        "description": "questionAnswers"
+                      },
+                      "roomId": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "roomId"
+                      }
+                    }
+                  },
+                  "description": "sessions"
+                },
+                "speakers": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "firstName": {
+                        "type": "string",
+                        "description": "firstName"
+                      },
+                      "lastName": {
+                        "type": "string",
+                        "description": "lastName"
+                      },
+                      "bio": {
+                        "type": "string",
+                        "description": "bio"
+                      },
+                      "tagLine": {
+                        "type": "string",
+                        "description": "tagLine"
+                      },
+                      "profilePicture": {
+                        "type": "string",
+                        "description": "profilePicture"
+                      },
+                      "isTopSpeaker": {
+                        "type": "boolean",
+                        "description": "isTopSpeaker"
+                      },
+                      "links": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "title": {
+                              "type": "string",
+                              "description": "title"
+                            },
+                            "url": {
+                              "type": "string",
+                              "description": "url"
+                            },
+                            "linkType": {
+                              "type": "string",
+                              "description": "linkType"
+                            }
+                          }
+                        },
+                        "description": "links"
+                      },
+                      "sessions": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "description": "sessions"
+                      },
+                      "fullName": {
+                        "type": "string",
+                        "description": "fullName"
+                      },
+                      "categoryItems": {
+                        "type": "array",
+                        "items": {},
+                        "description": "categoryItems"
+                      },
+                      "questionAnswers": {
+                        "type": "array",
+                        "items": {},
+                        "description": "questionAnswers"
+                      }
+                    }
+                  },
+                  "description": "speakers"
+                },
+                "questions": {
+                  "type": "array",
+                  "items": {},
+                  "description": "questions"
+                },
+                "categories": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id"
+                      },
+                      "title": {
+                        "type": "string",
+                        "description": "title"
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "id"
+                            },
+                            "name": {
+                              "type": "string",
+                              "description": "name"
+                            },
+                            "sort": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "sort"
+                            }
+                          }
+                        },
+                        "description": "items"
+                      },
+                      "sort": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "sort"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "type"
+                      }
+                    }
+                  },
+                  "description": "categories"
+                },
+                "rooms": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "id"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "sort": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "sort"
+                      }
+                    }
+                  },
+                  "description": "rooms"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get All Data",
+        "description": "A global request to load in all available dats",
+        "operationId": "GetAllData",
+        "parameters": []
+      }
+    },
+    "/Speakers": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "id"
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "description": "firstName"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "description": "lastName"
+                  },
+                  "fullName": {
+                    "type": "string",
+                    "description": "fullName"
+                  },
+                  "bio": {
+                    "type": "string",
+                    "description": "bio"
+                  },
+                  "tagLine": {
+                    "type": "string",
+                    "description": "tagLine"
+                  },
+                  "profilePicture": {
+                    "type": "string",
+                    "description": "profilePicture"
+                  },
+                  "sessions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "format": "int32",
+                          "description": "id"
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "name"
+                        }
+                      }
+                    },
+                    "description": "sessions"
+                  },
+                  "isTopSpeaker": {
+                    "type": "boolean",
+                    "description": "isTopSpeaker"
+                  },
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "description": "title"
+                        },
+                        "url": {
+                          "type": "string",
+                          "description": "url"
+                        },
+                        "linkType": {
+                          "type": "string",
+                          "description": "linkType"
+                        }
+                      }
+                    },
+                    "description": "links"
+                  },
+                  "questionAnswers": {
+                    "type": "array",
+                    "items": {},
+                    "description": "questionAnswers"
+                  },
+                  "categories": {
+                    "type": "array",
+                    "items": {},
+                    "description": "categories"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get All Speakers",
+        "description": "Get all the speakers data",
+        "operationId": "GetAllSpeakers",
+        "parameters": []
+      }
+    },
+    "/Sessions": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "groupId": {
+                    "type": "string",
+                    "description": "groupId"
+                  },
+                  "groupName": {
+                    "type": "string",
+                    "description": "groupName"
+                  },
+                  "sessions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "questionAnswers": {
+                          "type": "array",
+                          "items": {},
+                          "description": "questionAnswers"
+                        },
+                        "id": {
+                          "type": "string",
+                          "description": "id"
+                        },
+                        "title": {
+                          "type": "string",
+                          "description": "title"
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "description"
+                        },
+                        "startsAt": {
+                          "type": "string",
+                          "description": "startsAt"
+                        },
+                        "endsAt": {
+                          "type": "string",
+                          "description": "endsAt"
+                        },
+                        "isServiceSession": {
+                          "type": "boolean",
+                          "description": "isServiceSession"
+                        },
+                        "isPlenumSession": {
+                          "type": "boolean",
+                          "description": "isPlenumSession"
+                        },
+                        "speakers": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "description": "id"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              }
+                            }
+                          },
+                          "description": "speakers"
+                        },
+                        "categories": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer",
+                                "format": "int32",
+                                "description": "id"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              },
+                              "categoryItems": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "integer",
+                                      "format": "int32",
+                                      "description": "id"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "description": "name"
+                                    }
+                                  }
+                                },
+                                "description": "categoryItems"
+                              },
+                              "sort": {
+                                "type": "integer",
+                                "format": "int32",
+                                "description": "sort"
+                              }
+                            }
+                          },
+                          "description": "categories"
+                        },
+                        "roomId": {
+                          "type": "integer",
+                          "format": "int32",
+                          "description": "roomId"
+                        },
+                        "room": {
+                          "type": "string",
+                          "description": "room"
+                        }
+                      }
+                    },
+                    "description": "sessions"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get All Sessions",
+        "description": "Get all sessions in one export",
+        "operationId": "GetAllSession",
+        "parameters": []
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {},
+  "security": [],
+  "tags": []
+}
