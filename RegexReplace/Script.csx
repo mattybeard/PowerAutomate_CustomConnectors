@@ -28,7 +28,7 @@ public class Script : ScriptBase
         var pattern = (string)requestContentAsJson["pattern"];
         var replacement = (string)requestContentAsJson["replacement"];
 
-        var regexResult = Regex.Replace(input, pattern, replacement);
+        var regexResult = Regex.Replace(input, pattern, replacement, TimeSpan.FromMilliseconds(250));
 
         // Manipulate the response data as applicable before returning it
         JObject output = new JObject
