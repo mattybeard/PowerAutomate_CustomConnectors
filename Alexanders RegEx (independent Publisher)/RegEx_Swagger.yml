@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  title: RegEx
+  description: Regex match and replace commands built into Power Automate directly.
+  version: '1.0'
+host: api.contoso.com
+basePath: /
+schemes:
+  - https
+consumes: []
+produces: []
+paths:
+  /regexReplace:
+    post:
+      responses:
+        default:
+          description: default
+          schema:
+            type: object
+            properties:
+              output:
+                type: string
+                description: output
+      summary: Alexander's RegEx Replace
+      description: RegEx replace built into Power Automate
+      operationId: RegexReplace
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            type: object
+            properties:
+              input:
+                type: string
+                description: input
+              pattern:
+                type: string
+                description: pattern
+              replacement:
+                type: string
+                description: replacement
+  /regexMatch:
+    post:
+      responses:
+        default:
+          description: default
+          schema:
+            type: object
+            properties:
+              output:
+                type: string
+                description: output
+      summary: Alexander's RegEx Match
+      description: RegEx Match built into Power Automate
+      operationId: RegexMatch
+      parameters:
+        - name: body
+          in: body
+          required: false
+          schema:
+            type: object
+            properties:
+              input:
+                type: string
+                description: input
+              pattern:
+                type: string
+                description: pattern
+definitions: {}
+parameters: {}
+responses: {}
+securityDefinitions: {}
+security: []
+tags: []
